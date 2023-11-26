@@ -31,4 +31,22 @@ const users = [
     },
 ]
 
-console.log(users);
+let usersCardsContainer = document.querySelector(".users-cards-container");
+
+for(let i = 0; i < users.length; i++){
+    let articleUserCard = document.createElement("article");
+    articleUserCard.classList.add("user-card");
+    articleUserCard.innerHTML = 
+    `
+    <div class="reference-image-container">
+        <img src="${users[i].referenceImage}" alt="${users[i].fullName} image">
+    </div>
+    <h2>
+        ${users[i].fullName}
+    </h2>
+    <p>
+        ${users[i].job}
+    </p>
+    `;
+    usersCardsContainer.appendChild(articleUserCard);
+}
